@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'opiny-a6042.firebasestorage.app',
     iosBundleId: 'com.example.opiny',
   );
+
 }
