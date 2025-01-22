@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-// import 'package:get/get_core/src/get_main.dart';
 import 'package:opiny/custom_text.dart';
 import 'package:opiny/screens/profile.dart';
-import 'package:opiny/viewModel/get_data_controller.dart';
+import 'package:opiny/viewModel/fatch_data.dart';
 import 'package:opiny/widgets/card.dart';
 import 'package:opiny/widgets/categories.dart';
 import 'package:opiny/widgets/trendings.dart';
@@ -16,23 +14,41 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  dynamic matchController;
-  // var match;
+  List<dynamic> trendingItems = [];
+  bool isLoading = true; // Added state for loading
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    callMatch();
+    _fetchData();
   }
 
-  void callMatch() {
-    // match = matchController.match.value!;
-    matchController = Get.find<MatchController>();
+  Future<void> _fetchData() async {
+    try {
+      final jsonData = await FatchData().fatchData();
+      if (jsonData != null && jsonData.containsKey('data')) {
+        setState(() {
+          trendingItems = jsonData['data'];
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to load data')),
+        );
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: $e')),
+      );
+    } finally {
+      setState(() {
+        isLoading = false; // Loading finished
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final match = matchController.match.value!;
+    // final match = matchController.match.value!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -103,37 +119,39 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                   const SizedBox(height: 8),
-                  Obx(
-                    () {
-                      return Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        alignment: WrapAlignment.start,
-                        children: [
-                          TrendingChip(
-                              label: match.name.toString(),
-                              imagePath: 'assets/images/vs3.png'),
-                          const TrendingChip(
-                            label: 'SA V WI',
-                            imagePath: 'assets/images/vs2.png',
-                          ),
-                          const TrendingChip(
-                            label: 'EN V IN',
-                            imagePath: 'assets/images/vs1.png',
-                          ),
-                          const TrendingChip(
-                              label: 'Bitcoin',
-                              imagePath: 'assets/images/bitcoin.png'),
-                          const TrendingChip(
-                              label: 'Youtube',
-                              imagePath: 'assets/images/youtube.png'),
-                          const TrendingChip(
-                              label: 'Stocks',
-                              imagePath: 'assets/images/dollar.png'),
-                        ],
-                      );
-                    },
-                  ),
+                  isLoading == true
+                      ? const Center(child: CircularProgressIndicator())
+                      : Wrap(
+                          spacing: 8,
+                          runSpacing: 8,
+                          alignment: WrapAlignment.start,
+                          children: [
+                            TrendingChip(
+                                label: trendingItems[0]['name'],
+                                imagePath: 'assets/images/vs3.png'),
+                            TrendingChip(
+                              label: trendingItems[1]['name'],
+                              imagePath: 'assets/images/vs2.png',
+                            ),
+                            TrendingChip(
+                              label: trendingItems[7]['name'],
+                              imagePath: 'assets/images/vs1.png',
+                            ),
+                            TrendingChip(
+                              label: trendingItems[4]['name'],
+                              imagePath: 'assets/images/vs1.png',
+                            ),
+                            const TrendingChip(
+                                label: 'Bitcoin',
+                                imagePath: 'assets/images/bitcoin.png'),
+                            const TrendingChip(
+                                label: 'Youtube',
+                                imagePath: 'assets/images/youtube.png'),
+                            const TrendingChip(
+                                label: 'Stocks',
+                                imagePath: 'assets/images/dollar.png'),
+                          ],
+                        ),
                 ],
               ),
             ),

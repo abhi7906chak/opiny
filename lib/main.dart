@@ -9,29 +9,29 @@ import 'package:opiny/screens/personal_detail.dart';
 import 'package:opiny/screens/profile.dart';
 import 'package:opiny/screens/settings.dart';
 import 'package:opiny/screens/wallet.dart';
-import 'package:opiny/viewModel/get_data_controller.dart';
+// import 'package:opiny/viewModel/get_data_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
-// getx universal controller to match data 
-  final MatchController matchController = Get.put(MatchController());
+  // getx universal controller to match data
+  // final MatchController matchController = Get.put(MatchController());
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 815),
       minTextAdapt: true,
       child: GetMaterialApp(
-        initialBinding: BindingsBuilder(() {
-          Get.put(MatchController());
-        }),
+        // initialBinding: BindingsBuilder(() {
+        //   Get.put(MatchController());
+        // }),
         debugShowCheckedModeBanner: false,
-        title: 'opiny',
+        title: 'Opiny',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
@@ -41,10 +41,11 @@ class MyApp extends StatelessWidget {
           '/login': (_) => LoginScreen(),
           '/otp': (_) => OtpScreen(),
           '/home': (_) => const HomeScreen(),
-          'profile': (_) => const MyProfileScreen(),
+          '/profile': (_) =>
+              const MyProfileScreen(), // Updated this route to be '/profile'
           '/setting': (_) => const SettingsPage(),
           '/personal': (_) => const PersonalDetailsScreen(),
-          '/wallet': (_) => const WalletScreen()
+          '/wallet': (_) => const WalletScreen(),
         },
       ),
     );
