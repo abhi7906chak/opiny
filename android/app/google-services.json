@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "401446128767",
+    "project_id": "opiny-a6042",
+    "storage_bucket": "opiny-a6042.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401446128767:android:a661e472a02f38de22c34a",
+        "android_client_info": {
+          "package_name": "com.example.need_to_assist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz2MO6NOkFXsddE25c1m6GvE_y0P-Tr9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401446128767:android:abc405ebd432408822c34a",
+        "android_client_info": {
+          "package_name": "com.example.opiny"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz2MO6NOkFXsddE25c1m6GvE_y0P-Tr9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
