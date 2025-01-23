@@ -1,8 +1,14 @@
 plugins {
     id "com.android.application"
+<<<<<<< HEAD
     
     id 'com.google.gms.google-services'
    
+=======
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+>>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
@@ -32,6 +38,7 @@ android {
         versionName = flutter.versionName
     }
 
+<<<<<<< HEAD
     signingConfigs {
         release {
             storeFile file("E:/opiny/opiny-master/my-release-key.jks")  
@@ -45,6 +52,12 @@ android {
         release {
             // Use the signing configuration for release
             signingConfig signingConfigs.release
+=======
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            signingConfig = signingConfigs.debug
+>>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
         }
     }
 }

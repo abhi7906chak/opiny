@@ -13,7 +13,11 @@ import 'package:opiny/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
+<<<<<<< HEAD
     await tester.pumpWidget( MyApp());
+=======
+    await tester.pumpWidget(const MyApp());
+>>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

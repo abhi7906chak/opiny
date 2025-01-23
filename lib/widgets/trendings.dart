@@ -5,6 +5,7 @@ class TrendingChip extends StatelessWidget {
   final String label;
   final String imagePath;
 
+<<<<<<< HEAD
   const TrendingChip({
     super.key,
     required this.label,
@@ -56,6 +57,21 @@ class TrendingChip extends StatelessWidget {
           ),
         );
       },
+=======
+
+  const TrendingChip({super.key, required this.label, required this.imagePath, });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 105,height: 50,
+      decoration: BoxDecoration(border: const Border(),color: Colors.white,borderRadius: BorderRadius.circular(5),),
+      child: Row(
+        children: [
+          Image.asset(imagePath,width: 45,height: 45,),
+          CustomText(text: label,fontSize: 12)
+        ],
+      ),
+>>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
     );
   }
 }
