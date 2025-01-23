@@ -9,17 +9,12 @@ class TradeCard extends StatelessWidget {
   final String noPrice;
   final String imagePath;
 
-<<<<<<< HEAD
   const TradeCard({
     super.key,
-=======
-  const TradeCard({super.key,
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
     required this.title,
     required this.details,
     required this.yesPrice,
     required this.noPrice,
-<<<<<<< HEAD
     required this.trades,
     required this.imagePath,
   });
@@ -199,15 +194,6 @@ class TradeCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8),
       color: Colors.white,
-=======
-    required this.trades, required this.imagePath,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8),color: Colors.white,
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -215,7 +201,6 @@ class TradeCard extends StatelessWidget {
           children: [
             Row(
               children: [
-<<<<<<< HEAD
                 const Icon(Icons.person, size: 15),
                 const SizedBox(width: 8),
                 Expanded(
@@ -223,21 +208,12 @@ class TradeCard extends StatelessWidget {
                     text: trades,
                     fontWeight: FontWeight.bold,
                   ),
-=======
-                const Icon(Icons.person,size: 15,),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: CustomText(text: trades,
-                      fontWeight: FontWeight.bold,
-                    ),
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
                 ),
               ],
             ),
             Row(
               children: [
                 Expanded(
-<<<<<<< HEAD
                   child: CustomText(
                     text: title,
                     fontWeight: FontWeight.bold,
@@ -249,30 +225,16 @@ class TradeCard extends StatelessWidget {
                   width: 70,
                   height: 70,
                 ),
-=======
-                  child:CustomText(text: title,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                 const SizedBox(width: 8),
-                Image.asset(imagePath,width: 70,height: 70,),
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
               ],
             ),
             if (details.isNotEmpty) ...[
               const SizedBox(height: 8),
-<<<<<<< HEAD
               CustomText(text: details, fontSize: 14, color: Colors.black),
-=======
-             CustomText(text: details,
-             fontSize: 14, color: Colors.black)
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
             ],
             const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-<<<<<<< HEAD
                 SizedBox(
                   width: 150,
                   child: ElevatedButton(
@@ -306,22 +268,6 @@ class TradeCard extends StatelessWidget {
                       color: const Color(0xffe43834),
                       fontWeight: FontWeight.bold,
                     ),
-=======
-                SizedBox(width: 150,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xffe7f5ff),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
-                    onPressed: () {},
-
-                    child: CustomText(text: 'YES | $yesPrice',color: const Color(0xff41b9ff),fontWeight: FontWeight.bold),
-                  ),
-                ),
-                const SizedBox(width: 5,),
-                SizedBox(width: 150,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: const Color(0xffffd5bd),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
-                    onPressed: () {},
-                    child: CustomText(text: 'NO | $noPrice',color: const Color(0xffe43834),fontWeight: FontWeight.bold),
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
                   ),
                 ),
               ],
@@ -331,8 +277,4 @@ class TradeCard extends StatelessWidget {
       ),
     );
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3

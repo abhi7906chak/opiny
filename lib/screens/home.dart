@@ -143,7 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               imagePath: 'assets/images/vs1.png',
                             ),
                             TrendingChip(
-                              
                                 label: "AU vs EN",
                                 imagePath: 'assets/images/vs3.png'),
                             TrendingChip(

@@ -1,14 +1,6 @@
 plugins {
     id "com.android.application"
-<<<<<<< HEAD
-    
     id 'com.google.gms.google-services'
-   
-=======
-    // START: FlutterFire Configuration
-    id 'com.google.gms.google-services'
-    // END: FlutterFire Configuration
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
@@ -28,17 +20,13 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.opiny"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
-<<<<<<< HEAD
     signingConfigs {
         release {
             storeFile file("E:/opiny/opiny-master/my-release-key.jks")  
@@ -50,14 +38,7 @@ android {
 
     buildTypes {
         release {
-            // Use the signing configuration for release
             signingConfig signingConfigs.release
-=======
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            signingConfig = signingConfigs.debug
->>>>>>> eb123ae2c621f3d08ef36ca49922754adde646e3
         }
     }
 }
