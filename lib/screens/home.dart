@@ -121,35 +121,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 8),
                   isLoading == true
                       ? const Center(child: CircularProgressIndicator())
-                      : Wrap(
+                      : const Wrap(
                           spacing: 8,
                           runSpacing: 8,
                           alignment: WrapAlignment.start,
                           children: [
                             TrendingChip(
-                                label: trendingItems[0]['name'],
-                                imagePath: 'assets/images/vs3.png'),
-                            TrendingChip(
-                              label: trendingItems[1]['name'],
+                              label: "Ind Vs Eng",
                               imagePath: 'assets/images/vs2.png',
                             ),
                             TrendingChip(
-                              label: trendingItems[7]['name'],
+                              label: "Sec vs PC",
+                              imagePath: 'assets/images/vs2.png',
+                            ),
+                            TrendingChip(
+                              label: "DV vs SWR",
                               imagePath: 'assets/images/vs1.png',
                             ),
                             TrendingChip(
-                              label: trendingItems[4]['name'],
+                              label: "UNS vs SRI",
                               imagePath: 'assets/images/vs1.png',
                             ),
-                            const TrendingChip(
-                                label: 'Bitcoin',
-                                imagePath: 'assets/images/bitcoin.png'),
-                            const TrendingChip(
-                                label: 'Youtube',
-                                imagePath: 'assets/images/youtube.png'),
-                            const TrendingChip(
-                                label: 'Stocks',
-                                imagePath: 'assets/images/dollar.png'),
+                            TrendingChip(
+                                label: "AU vs EN",
+                                imagePath: 'assets/images/vs3.png'),
+                            TrendingChip(
+                              label: "SKI vs SRO",
+                              imagePath: 'assets/images/vs2.png',
+                            ),
+                            // const TrendingChip(
+                            //     label: 'Bitcoin',
+                            //     imagePath: 'assets/images/bitcoin.png'),
+                            // const TrendingChip(
+                            //     label: 'Youtube',
+                            //     imagePath: 'assets/images/youtube.png'),
+                            // const TrendingChip(
+                            //     label: 'Stocks',
+                            //     imagePath: 'assets/images/dollar.png'),
                           ],
                         ),
                 ],
